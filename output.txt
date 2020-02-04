@@ -1,0 +1,54 @@
+Sat Jan 11 15:14:59 PST 2020
+*** compiling with clang++ to create an executable called myprogram
+clang version 7.0.1 (tags/RELEASE_701/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/rh/llvm-toolset-7.0/root/usr/bin
+In file included from playlist.cpp:5:
+./playlist.h:38:9: warning: private field 'randNumList' is not used [-Wunused-private-field]
+    int randNumList = 0;
+        ^
+./playlist.h:40:9: warning: private field 'songShuffle' is not used [-Wunused-private-field]
+    int songShuffle[MAX];
+        ^
+2 warnings generated.
+*** running clang-tidy using options from .clang-tidy
+LLVM (http://llvm.org/):
+  LLVM version 7.0.1
+  Optimized build.
+  Default target: x86_64-unknown-linux-gnu
+  Host CPU: broadwell
+7160 warnings generated.
+14315 warnings generated.
+/home/NETID/carsonjr/uncourses/css342/playlistReal/playlist.cpp:6:1: warning: #includes are not sorted properly [llvm-include-order]
+#include <iostream>
+^        ~~~~~~~~~~
+/home/NETID/carsonjr/uncourses/css342/playlistReal/playlist.cpp:10:1: warning: constructor does not initialize these fields: songShuffle [cppcoreguidelines-pro-type-member-init]
+Playlist::Playlist(const string& name) {
+^
+/home/NETID/carsonjr/uncourses/css342/playlistReal/playlist.cpp:17:11: warning: use '= default' to define a trivial destructor [hicpp-use-equals-default]
+Playlist::~Playlist() {
+          ^
+/home/NETID/carsonjr/uncourses/css342/playlistReal/playlist.cpp:37:31: warning: redundant boolean literal supplied to boolean operator [readability-simplify-boolean-expr]
+    if (isInPlaylist(song) == false) {
+        ~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+        !isInPlaylist(song)
+/home/NETID/carsonjr/uncourses/css342/playlistReal/playlist.cpp:42:5: warning: do not use 'else' after 'return' [readability-else-after-return]
+    else {
+    ^~~~~~
+Suppressed 14308 warnings (14308 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+*** running myprogram
+Run all tests.
+List all songs:
+Under The Wind, Safe And Sound, alpha waves, Dawning, Curiosity, Coda, When They Come, Event Horizon, Laugavegur, The Discovery, List 0 shuffled songs:
+
+List 1 shuffled songs:
+Dawning, 
+List 10 shuffled songs:
+When They Come, Event Horizon, Coda, Dawning, Coda, When They Come, alpha waves, The Discovery, Safe And Sound, alpha waves, 
+List all songs using << operator:
+Under The Wind, Safe And Sound, alpha waves, The Discovery, Curiosity, Coda, When They Come, Event Horizon, Laugavegur, 
+Successfully completed all tests.
+*** cleaning up, deleting myprogram
+Sat Jan 11 15:15:09 PST 2020
